@@ -1,7 +1,7 @@
 ![Logo?](https://raw.githubusercontent.com/dinugr/pixrin/master/canvas.png?style=centerme)
 
 # Pixrin.js
-------
+
 > Menggunakan objek untuk mempresentasikan pixel pada Javascript. Pixrin menggunakan canvas sebagai media penggambaran.
 
 ### Cara Memakai? 
