@@ -27,23 +27,42 @@ var pixrin = new PixRin({
 | `canvasH`             |      `630`      | tinggi canvas pada setelan.                                  |
 | `canvasAuto`          |     `true`    | Menghitung ukuran canvas berdasarkan ukuran, banyak, dan gap (jeda antar pixel). Jika diaktifkan, setelan ini akan mengabaikan `canvasW` dan `canvasH`. |
 |                       |               |                                                              |
-| **Pixel**       |||
+| **Pixel**     |               |                                                              |
 | `pixelW`              |      `51`     | Lebar pixel                                                  |
 | `pixelH`              |      `51`     | Tinggi pixel                                                 |
 | `pixelGap`            |       `1`       | Pemisah antar pixel                                          |
 | `pixelColor`          |   `"#0A1C1F"`   | Warna pixel normal dalam representasi tidak aktif            |
 | `pixelActiveColor`    |   `"#CFDF9F"`   | Warna pixel aktif                                            |
-| `pixelRenderer`       |     `null`    | Setelan fungsi callback untuk proses penciptaan sebuah pixel. Jika diisi akan meniban (override) fungsi bawaannya. <br />Bentuk bawaan adalah sebagai berikut: |
-|                       |               | `pixelRenderer: function (context, coordinate, options)`<br />`{`<br />    `context.fillRect(coordinate.x,   coordinate.y,`<br />    `options.pixelW, options.pixelH);`<br />`}` |
+| `pixelRenderer`       |     `null`    | Setelan fungsi callback untuk proses penciptaan sebuah pixel. Jika diisi akan meniban (override) fungsi bawaannya. <br />*Lihat bagian Callback untuk lebih lanjut.*|
 |                       |               |                                                              |
-| **Pixel Label** |||
+| **Pixel Label** |               |                                                              |
 | `pixelLabelEnable`    |     `false`     | Aktifkan label berupa koordinat sebuah pixel.                |
 | `pixelLabelFont`      |  `"Consolas"` | Jenis font untuk penulisan label.                            |
 | `PixelLabelSize`      |       `9`       | Ukuran label                                                 |
 | `pixelLabelColor`     |   `"#CFDF9F"`   | Warna tulisan pixel normal dalam representasi tidak aktif    |
 | `pixelLabelActiveColor` |   `"#0A1C1F"`   | Warna tulisan pixel aktif                                    |
-| `pixelLabelRenderer`  |     `null`    | Cara penggambaran label sebuah pixel. Jika diisi, maka akan meniban (override) fungsi bawaannya. <br />Bentuk bawaan adalah sebagai berikut: |
-|                       |               | `pixelLabelRenderer: function(context, coordinate, label, options)`<br />`{`<br/>    `context.font = _args.pixelLabelSize + "px " + options.pixelLabelFont;`<br />    `context.fillStyle = options.pixelLabelColor;`<br />    `context.fillText('(' + label.x + ',' + label.y + ')',`<br />                                            `coordinate.x, options.pixelLabelSize + coordinate.y);`<br />`}` |
+| `pixelLabelRenderer`  |     `null`    | Cara penggambaran label sebuah pixel. Jika diisi, maka akan meniban (override) fungsi bawaannya. <br />*Lihat bagian Callback untuk lebih lanjut.* |
+|                       |               |                                                              |
+#### Callback Bawaan
+##### pixelRenderer
+```javascript
+pixelRenderer: function (context, coord, options)
+{
+    context.fillRect(coord.x,coord.y, options.pixelW, options.pixelH);
+}
+```
+
+##### pixelLabelRenderer
+```javascript
+pixelLabelRenderer: function (context, coord, label, options)
+{
+    context.font = _args.pixelLabelSize + "px " + options.pixelLabelFont;
+    context.fillStyle = options.pixelLabelColor;
+    context.fillText('(' + label.x + ',' + label.y + ')', 
+                      coord.x, options.pixelLabelSize + coord.y);
+}
+```
+
 ### Method
 
 Pixrin saat ini hanya memiliki sedikit method, diantaranya:
