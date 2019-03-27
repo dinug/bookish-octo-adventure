@@ -88,11 +88,11 @@ function PixRin(args, func)
     // check limit of pixel coordinate
     function coordOutOfLimit(x,y) 
     {
-        if (x < 0 || x > args.lengthX) {
+        if (x < 0 || x >= args.lengthX) {
             console.error("nilai X diluar batas");
             return true;
         }
-        if (y < 0 || y > args.lengthY) {
+        if (y < 0 || y >= args.lengthY) {
             console.error("nilai Y diluar batas");
             return true;
         }
