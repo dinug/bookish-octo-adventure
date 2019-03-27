@@ -1,6 +1,8 @@
-# Pixrin
+![Logo?](https://raw.githubusercontent.com/dinugr/pixrin/master/canvas.png?style=centerme)
 
-Menggunakan objek untuk mempresentasikan pixel pada Javascript. Pixrin menggunakan canvas sebagai media penggambaran.
+# Pixrin.js
+------
+> Menggunakan objek untuk mempresentasikan pixel pada Javascript. Pixrin menggunakan canvas sebagai media penggambaran.
 
 ### Cara Memakai? 
 
@@ -33,7 +35,7 @@ var pixrin = new PixRin({
 | `pixelGap`            |       `1`       | Pemisah antar pixel                                          |
 | `pixelColor`          |   `"#0A1C1F"`   | Warna pixel normal dalam representasi tidak aktif            |
 | `pixelActiveColor`    |   `"#CFDF9F"`   | Warna pixel aktif                                            |
-| `pixelRenderer`       |     `null`    | Setelan fungsi callback untuk proses penciptaan sebuah pixel. Jika diisi akan meniban (override) fungsi bawaannya. <br />*Lihat bagian Callback untuk lebih lanjut.*|
+| `pixelRenderer`       |     `null`    | Setelan fungsi callback untuk proses penciptaan sebuah pixel. Jika diisi akan meniban (override) fungsi bawaannya. <br />*Lihat bagian [Callback](#pixelrenderer) untuk lebih lanjut.* |
 |                       |               |                                                              |
 | **Pixel Label** |               |                                                              |
 | `pixelLabelEnable`    |     `false`     | Aktifkan label berupa koordinat sebuah pixel.                |
@@ -41,7 +43,7 @@ var pixrin = new PixRin({
 | `PixelLabelSize`      |       `9`       | Ukuran label                                                 |
 | `pixelLabelColor`     |   `"#CFDF9F"`   | Warna tulisan pixel normal dalam representasi tidak aktif    |
 | `pixelLabelActiveColor` |   `"#0A1C1F"`   | Warna tulisan pixel aktif                                    |
-| `pixelLabelRenderer`  |     `null`    | Cara penggambaran label sebuah pixel. Jika diisi, maka akan meniban (override) fungsi bawaannya. <br />*Lihat bagian Callback untuk lebih lanjut.* |
+| `pixelLabelRenderer`  |     `null`    | Cara penggambaran label sebuah pixel. Jika diisi, maka akan meniban (override) fungsi bawaannya. <br />*Lihat bagian [Callback](#pixellabelrenderer) untuk lebih lanjut.* |
 |                       |               |                                                              |
 #### Callback Bawaan
 ##### pixelRenderer
