@@ -212,7 +212,7 @@ function PixRin(args, func)
     function putPixel(x,y)
     {
         // check limit
-        if (noContext() || coordOutOfLimit(x,y)) return;
+        if (noContext() || coordOutOfLimit(x,y)) return false;
         
         // save original color
         var tmp1 = args.pixelColor;
@@ -228,6 +228,8 @@ function PixRin(args, func)
         // restore normal color to original color
         args.pixelColor = tmp1;
         args.pixelLabelColor = tmp2;
+        
+        return true;
     }
     
     // clear all active pixels
@@ -241,8 +243,8 @@ function PixRin(args, func)
     
     this.putPixel = function(x,y)
     {
-        putPixel(x,y);
         history.push({x:x,y:y});
+        return putPixel(x,y);
     }
     
     this.clearPixel = function(x,y)
