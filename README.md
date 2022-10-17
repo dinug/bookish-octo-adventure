@@ -66,9 +66,6 @@ pixelLabelRenderer: function (context, coord, label, options)
 ```
 
 ### Method
-
-Pixrin saat ini hanya memiliki sedikit method, diantaranya:
-
 ###### pixrin.putPixel(`x`, `y`);
 
 Mengaktifkan pixel pada posisi x, y. 
